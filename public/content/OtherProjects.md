@@ -1,14 +1,14 @@
-## Project 1
+## Project sdf
 Description
-- Tags: Category 1
+- Tags: School
 - Badges:
   - Badge [blue]
 - Buttons:
   - Link [https://example.com]
 
-## Project 2
+## Project work
 Description
-- Tags: Category 2
+- Tags: Work
 - Badges:
   - Badge [blue]
 - Buttons:
@@ -16,7 +16,7 @@ Description
 
 ## Project 3
 Description
-- Tags: Category 3
+- Tags: Internship
 - Badges:
   - Badge [blue]
 - Buttons:

@@ -8,8 +8,10 @@ import {
   Icon,
   useColorModeValue,
   createIcon,
+  Center
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
+import { Image } from "@chakra-ui/react";
 
 export default function Header({ color }) {
   const profile = ProfileArray();
@@ -18,11 +20,7 @@ export default function Header({ color }) {
     contactSection.scrollIntoView({ behavior: "smooth" });
   };
   const linkedin = () => {
-    window.open(
-                `${profile.linkedin}`,
-                "_blank",
-                "noreferrer,noopener"
-              );
+    window.open(`${profile.linkedin}`, "_blank", "noreferrer,noopener");
   };
   return (
     <>
@@ -37,13 +35,25 @@ export default function Header({ color }) {
         <Stack
           as={Box}
           textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 36, md: 52 }}
+          spacing={{ base: 8, md: 10 }}
+          pt={{ base: 20, md: 20 }}
+          pb={{ base: 10, md: 20 }}
         >
+          {/* add image here */}
+          <Center>
+            <Image
+             borderRadius='full'
+              height={"250px"}
+              width={"250px"}
+              objectFit="cover"
+              src="/assets/profile.PNG"
+              alt="Timothy Ndichu"
+            />
+          </Center>
+
           <Heading
             fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            fontSize={{ base: "2xl", sm: "3xl", md: "5xl" }}
             lineHeight={"110%"}
           >
             {profile.headerName} <br />
@@ -59,7 +69,6 @@ export default function Header({ color }) {
           </Text>
           <Stack
             direction={"column"}
-            spacing={3}
             align={"center"}
             alignSelf={"center"}
             position={"relative"}

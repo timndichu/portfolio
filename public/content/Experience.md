@@ -1,7 +1,27 @@
 ## Company 1
 - *Role* | Jan'23 - Feb'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 1
+- Tags: Work
+- Badges:
+  - Badge [blue]
+- List Items:
+  - Point 1
+  - Point 2
+
+## Company 15
+- *Role* | Jan'23 - Feb'23
+- ![logo512](../assets/logo512.png)
+- Tags: Work
+- Badges:
+  - Badge [blue]
+- List Items:
+  - Point 1
+  - Point 2
+
+## Company 134
+- *Role* | Jan'23 - Feb'23
+- ![logo512](../assets/logo512.png)
+- Tags: School
 - Badges:
   - Badge [blue]
 - List Items:
@@ -11,7 +31,7 @@
 ## Company 2
 - *Role* | Feb'23 - Mar'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 2
+- Tags: Work
 - Badges:
   - Badge [blue]
 - List Items:
@@ -19,9 +39,9 @@
   - Point 2
 
 ## Company 3
-- *Role* | Mar'23 - Apr'23
+- *Role* | Feb'23 - Mar'23
 - ![logo512](../assets/logo512.png)
-- Tags: Category 3
+- Tags: School
 - Badges:
   - Badge [blue]
 - List Items:

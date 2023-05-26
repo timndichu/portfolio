@@ -62,6 +62,7 @@ export default function Experience({ color }) {
             <ButtonGroup variant="outline">
               {options.map((option) => (
                 <Button
+                  key={option.value}
                   colorScheme={selected === option.value ? `${color}` : "gray"}
                   onClick={() => handleSelected(option.value)}
                 >
@@ -74,7 +75,7 @@ export default function Experience({ color }) {
             {experience
               .filter((exp) => exp.tags.includes(selected))
               .map((exp) => (
-                <Fade bottom>
+                <Fade key={exp.company} bottom>
                   <Card key={exp.company} size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">

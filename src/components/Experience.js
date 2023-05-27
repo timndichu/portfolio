@@ -17,25 +17,31 @@ import {
   ListIcon,
   Button,
   ButtonGroup,
+  IconButton,
   Center,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+import { ChevronRightIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import { Fade } from "react-reveal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ExperienceArray from "./ExperienceArray";
-import TagsArray from "./TagsArray";
+import { BsGlobe2 } from "react-icons/bs";
 
 export default function Experience({ color }) {
   const experience = ExperienceArray();
-  const options = TagsArray("ExperienceTags");
-  const [selected, setSelected] = useState("");
+  const options = ["All", "Work", "Internship", "School"];
+  const [selected, setSelected] = useState("All");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  useEffect(() => {
-    if (options.length > 0) {
-      setSelected(options[0].value);
-    }
-  }, [options]);
-  
+  const [modal, setModal] = useState({});
+
   const handleSelected = (value) => {
     setSelected(value);
   };
@@ -46,7 +52,7 @@ export default function Experience({ color }) {
         <Stack
           as={Box}
           textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
+          spacing={{ base: 8, md: 8 }}
           pb={{ base: 20, md: 36 }}
         >
           <Stack align="center" direction="row" px={4}>
@@ -62,39 +68,56 @@ export default function Experience({ color }) {
             <ButtonGroup variant="outline">
               {options.map((option) => (
                 <Button
-                  key={option.value}
-                  colorScheme={selected === option.value ? `${color}` : "gray"}
-                  onClick={() => handleSelected(option.value)}
+                  key={option}
+                  colorScheme={selected === option ? `${color}` : "gray"}
+                  onClick={() => handleSelected(option)}
                 >
-                  {option.value}
+                  {option}
                 </Button>
               ))}
             </ButtonGroup>
           </Center>
           <Stack px={4} spacing={4}>
             {experience
-              .filter((exp) => exp.tags.includes(selected))
+              .filter((exp) => {
+                if (selected === "All") return exp;
+
+                return exp.tags.includes(selected);
+              })
               .map((exp) => (
                 <Fade key={exp.company} bottom>
                   <Card key={exp.company} size="sm">
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
-                          <Image src={exp.image} h={50} />
+                          <Image src={exp.image} h={50} w={50} />
                           <Box px={2} align="left">
-                            <Text fontWeight={600}>{exp.company}</Text>
-                            <Text>{exp.position}</Text>
+                            <HStack>
+                              <Text fontWeight={600}>{exp.company}</Text>
+                              <IconButton
+                                variant="ghost"
+                                colorScheme="teal"
+                                aria-label="About Company"
+                                fontSize="20px"
+                                onClick={() => {
+                                  onOpen();
+                                  setModal(exp);
+                                }}
+                                icon={<InfoOutlineIcon />}
+                              />
+                            </HStack>
+                            <Text>{exp.role}</Text>
                           </Box>
                         </HStack>
                         <Text px={2} fontWeight={300}>
-                          {exp.duration}
+                          {exp.startDate} - {exp.endDate}
                         </Text>
                       </Flex>
                     </CardHeader>
                     <CardBody>
                       <Flex>
                         <List align="left" spacing={3}>
-                          {exp.listItems.map((item, index) => (
+                          {exp.points.map((item, index) => (
                             <ListItem key={index}>
                               <ListIcon
                                 boxSize={6}
@@ -110,16 +133,45 @@ export default function Experience({ color }) {
                     <CardFooter>
                       <HStack spacing={2}>
                         {exp.badges.map((badge) => (
-                          <Badge
-                            key={badge.name}
-                            colorScheme={badge.colorScheme}
-                          >
+                          <Badge key={badge.id} colorScheme={badge.color}>
                             {badge.name}
                           </Badge>
                         ))}
                       </HStack>
                     </CardFooter>
                   </Card>
+                  <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>
+                        <HStack>
+                          <Image
+                            src={modal.image}
+                            h={50}
+                            w={50}
+                            borderRadius="6px"
+                          />
+                          <Text pl={1} fontWeight={600}>
+                            {modal.company}
+                          </Text>
+                        </HStack>
+                      </ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Flex pb={2}>{modal.description}</Flex>
+                      </ModalBody>
+                      <ModalFooter>
+                        <a href={modal.website}>
+                          <Button
+                            leftIcon={<BsGlobe2 />}
+                            color={`${color}.400`}
+                          >
+                            See website
+                          </Button>
+                        </a>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
                 </Fade>
               ))}
           </Stack>

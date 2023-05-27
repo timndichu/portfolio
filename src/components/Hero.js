@@ -56,17 +56,16 @@ export default function Header({ color }) {
             fontSize={{ base: "2xl", sm: "3xl", md: "5xl" }}
             lineHeight={"110%"}
           >
-            {profile.headerName} <br />
+            Hi, my name is Timothy Ndichu <br />
             <Text as={"span"} color={`${color}.400`}>
-              {profile.headerRole}
+            I'm a software engineer
             </Text>
           </Heading>
           <Text
             color={"gray.500"}
             fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
-          >
-            {profile.headerDesc}
-          </Text>
+          >Transforming ideas into seamless digital experiences through elegant mobile apps, powerful web apps, and cutting-edge APIs
+            </Text>
           <Stack
             direction={"column"}
             align={"center"}

@@ -69,7 +69,7 @@ export default function Projects({ color }) {
                 return project.tags.includes(selected);
               })
               .map((project) => (
-                <Fade bottom>
+                <Fade key={project.name} bottom>
                   <Card
                     key={project.name}
                     direction={{

@@ -7,7 +7,7 @@ const ProjectsArray = () => {
       "name": "What i do social media platform",
       "tags": "Work",
       "description": "Working on a social media platform that helps people find their purpose in life. It provides a variety of resources and tools to help people explore their interests, talents, and values. The website also offers a community forum where people can connect with others who are on a similar journey.\n\nIn particular, I am working on an audioroom/chatroom feature - similar to ClubHouse or Twitter Spaces",
-      "image": "/assets/whatido.PNG",
+      "image": "/assets/whatido.png",
       "badges": [
         {
           id: 1,

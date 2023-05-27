@@ -1,15 +1,22 @@
-import { Divider, Stack, Text, Container, Box, HStack } from "@chakra-ui/react";
-
+import {
+  Divider,
+  Stack,
+  Text,
+  Container,
+  Box,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
+import { BsDownload } from "react-icons/bs";
 
 export default function About({ color }) {
-
   return (
     <>
       <Container maxW={"3xl"} id="about">
         <Stack
           as={Box}
           textAlign={"center"}
-          spacing={{ base: 8, md: 14 }}
+          spacing={{ base: 8, md: 12 }}
           pb={{ base: 8, md: 14 }}
         >
           <Stack align="center" direction="row" px={4}>
@@ -21,7 +28,7 @@ export default function About({ color }) {
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
-          <Text color={"gray.600"} fontSize={"xl"} px={4}>
+          <Text color={"gray.500"} fontSize={"xl"} px={4}>
             I am a passionate full-stack developer specializing in mobile app
             development using React Native and Flutter. I also create dynamic
             web applications using React and Next.js. With a strong proficiency
@@ -30,6 +37,11 @@ export default function About({ color }) {
             deliver innovative solutions that enhance user experiences across
             multiple platforms.
           </Text>
+          <a href="https://drive.google.com/file/d/1r7SGTOo1v4mNpijFf__gKY5tcYdAfr5q/view">
+            <Button rightIcon={<BsDownload />} color={`${color}.400`}>
+              Download Resume
+            </Button>
+          </a>
         </Stack>
       </Container>
     </>

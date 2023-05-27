@@ -38,7 +38,7 @@ export default function Projects({ color }) {
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 8 }}
-          pb={{ base: 20, md: 36 }}
+          pb={{ base: 8, md: 14 }}
         >
           <Stack align="center" direction="row" p={2}>
             <HStack mx={4}>

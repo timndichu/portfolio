@@ -88,7 +88,9 @@ export default function Header({ color }) {
               variant={"link"}
               colorScheme={"blue"}
               size={"sm"}
+              pt={3}
               onClick={scrollToContact}
+              textDecoration="none"
             >
               Contact Me
             </Button>

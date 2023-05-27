@@ -4,7 +4,9 @@ import {
   Text,
   Container,
   Box,
+  Link,
   HStack,
+  Center,
   Button,
 } from "@chakra-ui/react";
 import { BsDownload } from "react-icons/bs";
@@ -37,11 +39,15 @@ export default function About({ color }) {
             deliver innovative solutions that enhance user experiences across
             multiple platforms.
           </Text>
-          <a href="https://drive.google.com/file/d/1r7SGTOo1v4mNpijFf__gKY5tcYdAfr5q/view">
-            <Button rightIcon={<BsDownload />} color={`${color}.400`}>
-              Download Resume
-            </Button>
-          </a>
+          <Center>
+            <Box width="fit-content" align='center'>
+              <Link href='https://drive.google.com/file/d/1r7SGTOo1v4mNpijFf__gKY5tcYdAfr5q/view' textDecoration="none" isExternal>
+                <Button rightIcon={<BsDownload />} color={`${color}.400`} textDecoration="none" >
+                  Download Resume
+                </Button>
+              </Link>
+            </Box>
+          </Center>s
         </Stack>
       </Container>
     </>

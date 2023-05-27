@@ -4,6 +4,21 @@ const ProjectsArray = () => {
  
   const projects = [
     {
+      "name": "What i do social media platform",
+      "tags": "Work",
+      "description": "Working on a social media platform that helps connect professionals and allows them to express themselves in a casual way.\nIn particular, working on an audioroom chatroom feature like Twitter Spaces",
+      "image": "/assets/whatido2.PNG",
+      "badges": [
+        {
+          id:1,
+          name: "Ongoing",
+          color: "orange"
+        }
+      ],
+      "link": "https://whatido.app",
+      
+    },
+    {
       "name": "Kicks and Heels",
       "tags": "Work",
       "description": "Developed and deployed the Kicks and Heels ecommerce app using Flutter, NodeJS, MongoDB and AWS",
@@ -36,22 +51,7 @@ const ProjectsArray = () => {
       "github": "https://github.com/timndichu/NanosatReactApp"
       
     },
-    {
-      "name": "Nywele Nyumbani website",
-      "tags": "Internship",
-      "description": "Built a web application to help connect clients to hair stylists",
-      "image": "/assets/nywele.png",
-      "badges": [
-       
-        {
-          id:2,
-          name: "Completed",
-          color: "green"
-        }
-      ],
-      "link": "https://home.nywelenyumbani.co.ke/",
-      
-    },
+  
 
     {
       "name": "Land Cover Collection App",
@@ -71,20 +71,21 @@ const ProjectsArray = () => {
     },
 
     {
-      "name": "What i do social media platform",
-      "tags": "Work",
-      "description": "Working on a social media platform that helps connect professionals and allows them to express themselves in a casual way.\nIn particular, working on an audioroom chatroom feature like Twitter Spaces",
-      "image": "/assets/whatido2.PNG",
+      "name": "Nywele Nyumbani website",
+      "tags": "Internship",
+      "description": "Built a web application to help connect clients to hair stylists",
+      "image": "/assets/nywele.png",
       "badges": [
+       
         {
-          id:1,
-          name: "Ongoing",
-          color: "orange"
+          id:2,
+          name: "Completed",
+          color: "green"
         }
       ],
-      "link": "https://whatido.app",
+      "link": "https://home.nywelenyumbani.co.ke/",
       
-    }
+    },
 
 
   ]

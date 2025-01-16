@@ -2,22 +2,21 @@
 
 const ExperienceArray = () => {
   const experiences = [
-   
     {
-      company: "Ecospace Services LTD",
-      role: "Full-Stack Developer",
+      company: "Inlaks LTD",
+      role: "T24 Software Consultant",
       description:
-        "Ecospace Services Limited is a geospatial firm that offers cutting-edge targeted spatial solutions and consultancy services in Land, Engineering Survey, Training, Drone Mapping, Technical Support, and Application Development among others.\nThe company has a team of experienced professionals who are committed to providing quality services to their clients.\nEcospace Services Limited is a reliable partner for businesses of all sizes.",
-      website: "https://espace.co.ke/",
-      image: "/assets/Ecospace.jpg",
-      startDate: "Jan 2022",
+        "Inlaks is a global technology company that provides IT solutions and services across various sectors, including banking, financial services, telecommunications, and government. They offer a wide range of services such as system integration, software development, infrastructure management, and consulting. Inlaks is known for providing solutions that enable digital transformation, improve operational efficiency, and support business growth.",
+      website: "https://www.inlaks.com/",
+      image: "/assets/inlaks.jpg",
+      startDate: "Nov 2023",
       endDate: "Present",
       tags: "Work",
       points: [
-        "Developed mobile and web applications from concept to launch, using technologies such as ReactJS, NodeJS and Flutter",
-        "Led the design and development of multiple enterprise-level microservice applications",
-        "Worked closely with clients to understand their needs and requirements for geospatial solutions, and incorporated feedback into the development process",
-        "Designed and implemented custom maps and geospatial tools for a variety of industries, including agriculture, transportation, and natural resource management",
+        "Implemented and customized Temenos T24 as Local Technical Architect(LTA), optimizing banking processes and ensuring regulatory compliance.",
+        "Developed real-time interfaces using Kafka & DES for seamless system integration and enhanced operational efficiency.",
+        "Utilized Docker, AIX, and Linux for scalable environment setup and deployment.",
+        "Contributed to the Central Bank of Kenya T24 implementation, ensuring environment stability, maintenance, and deployment in line with national regulations.",
       ],
       badges: [
         {
@@ -33,6 +32,66 @@ const ExperienceArray = () => {
       ],
     },
     {
+      company: "App Town Technologies",
+      role: "Full-Stack Developer",
+      description:
+        "App Town Technologies is a fintech firm that offers cutting-edge solutions for clients spanning different needs such as ecommerce",
+      website: "https://atlke.com/",
+      image: "/assets/atl.jpg",
+      startDate: "Aug 2023",
+      endDate: "Present",
+      tags: "Work",
+      points: [
+        "Launched j-uza.com, an e-commerce platform using Next.js, Redux, Node.js, PostgreSQL, increasing sales by 40% in the first quarter.",
+        "Engineered the frontend with Next.js and Redux, enhancing user interaction and reducing bounce rate by 25%",
+        "Built a robust backend using Node.js and PostgreSQL, handling 1,000+ active users seamlessly.",
+        "Integrated secure payment gateways (PayPal, Stripe) and optimized for 99.9% uptime and faster transaction processing.",
+        "Developed a seller/vendor dashboard using React and Node.js, improving product management efficiency for 50+ vendors."
+      ],
+      badges: [
+        {
+          id: 1,
+          name: "Contracted",
+          color: "blue",
+        },
+        {
+          id: 2,
+          name: "Ongoing",
+          color: "orange",
+        },
+      ],
+    },
+   
+    {
+      company: "Ecospace Services LTD",
+      role: "Full-Stack Developer",
+      description:
+        "Ecospace Services Limited is a geospatial firm that offers cutting-edge targeted spatial solutions and consultancy services in Land, Engineering Survey, Training, Drone Mapping, Technical Support, and Application Development among others.\nThe company has a team of experienced professionals who are committed to providing quality services to their clients.\nEcospace Services Limited is a reliable partner for businesses of all sizes.",
+      website: "https://espace.co.ke/",
+      image: "/assets/Ecospace.jpg",
+      startDate: "Jan 2022",
+      endDate: "July 2023",
+      tags: "Work",
+      points: [
+        "Developed mobile and web applications from concept to launch, using technologies such as ReactJS, NodeJS and Flutter",
+        "Led the design and development of multiple enterprise-level microservice applications",
+        "Worked closely with clients to understand their needs and requirements for geospatial solutions, and incorporated feedback into the development process",
+        "Designed and implemented custom maps and geospatial tools for a variety of industries, including agriculture, transportation, and natural resource management",
+      ],
+      badges: [
+        {
+          id: 1,
+          name: "Contracted",
+          color: "blue",
+        },
+        {
+          id: 2,
+          name: "Completed",
+          color: "green",
+        },
+      ],
+    },
+    {
       company: "What i do",
       role: "Full-Stack Developer",
       startDate: "Feb 2023",
@@ -40,7 +99,7 @@ const ExperienceArray = () => {
       image:
         "https://donnysliststory.sfo3.cdn.digitaloceanspaces.com/assets/whatido_logo.jpeg",
       website: "https://whatido.app/",
-      endDate: "Present",
+      endDate: "July 2023",
       tags: "Work",
       points: [
         "Built a real-time audio chat feature for web applications, similar to Twitter Spaces or Clubhouse.",
@@ -59,8 +118,8 @@ const ExperienceArray = () => {
         },
         {
           id: 2,
-          name: "Ongoing",
-          color: "orange",
+          name: "Completed",
+          color: "green",
         },
       ],
     },

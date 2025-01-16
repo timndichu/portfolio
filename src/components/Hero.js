@@ -42,11 +42,12 @@ export default function Header({ color }) {
           {/* add image here */}
           <Center>
             <Image
-             borderRadius='full'
+              borderRadius='full'
               height={"250px"}
               width={"250px"}
+              objectPosition="40% 15%"
               objectFit="cover"
-              src="/assets/profile.PNG"
+              src="/assets/dp-min.JPG"
               alt="Timothy Ndichu"
             />
           </Center>
@@ -58,14 +59,14 @@ export default function Header({ color }) {
           >
             Hi, my name is Timothy Ndichu <br />
             <Text as={"span"} color={`${color}.400`}>
-            I'm a software engineer
+              I'm a software engineer
             </Text>
           </Heading>
           <Text
             color={"gray.500"}
             fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
           >Transforming ideas into seamless digital experiences through elegant mobile apps, powerful web apps, and cutting-edge APIs
-            </Text>
+          </Text>
           <Stack
             direction={"column"}
             align={"center"}

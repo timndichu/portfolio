@@ -4,7 +4,7 @@ const ExperienceArray = () => {
   const experiences = [
     {
       company: "Inlaks LTD",
-      role: "T24 Software Consultant",
+      role: "Software Engineer",
       description:
         "Inlaks is a global technology company that provides IT solutions and services across various sectors, including banking, financial services, telecommunications, and government. They offer a wide range of services such as system integration, software development, infrastructure management, and consulting. Inlaks is known for providing solutions that enable digital transformation, improve operational efficiency, and support business growth.",
       website: "https://www.inlaks.com/",
@@ -38,8 +38,8 @@ const ExperienceArray = () => {
         "App Town Technologies is a fintech firm that offers cutting-edge solutions for clients spanning different needs such as ecommerce",
       website: "https://atlke.com/",
       image: "/assets/atl.jpg",
-      startDate: "Aug 2023",
-      endDate: "Present",
+      startDate: "Jan 2023",
+      endDate: "Nov 2023",
       tags: "Work",
       points: [
         "Launched j-uza.com, an e-commerce platform using Next.js, Redux, Node.js, PostgreSQL, increasing sales by 40% in the first quarter.",
@@ -62,35 +62,7 @@ const ExperienceArray = () => {
       ],
     },
    
-    {
-      company: "Ecospace Services LTD",
-      role: "Full-Stack Developer",
-      description:
-        "Ecospace Services Limited is a geospatial firm that offers cutting-edge targeted spatial solutions and consultancy services in Land, Engineering Survey, Training, Drone Mapping, Technical Support, and Application Development among others.\nThe company has a team of experienced professionals who are committed to providing quality services to their clients.\nEcospace Services Limited is a reliable partner for businesses of all sizes.",
-      website: "https://espace.co.ke/",
-      image: "/assets/Ecospace.jpg",
-      startDate: "Jan 2022",
-      endDate: "July 2023",
-      tags: "Work",
-      points: [
-        "Developed mobile and web applications from concept to launch, using technologies such as ReactJS, NodeJS and Flutter",
-        "Led the design and development of multiple enterprise-level microservice applications",
-        "Worked closely with clients to understand their needs and requirements for geospatial solutions, and incorporated feedback into the development process",
-        "Designed and implemented custom maps and geospatial tools for a variety of industries, including agriculture, transportation, and natural resource management",
-      ],
-      badges: [
-        {
-          id: 1,
-          name: "Contracted",
-          color: "blue",
-        },
-        {
-          id: 2,
-          name: "Completed",
-          color: "green",
-        },
-      ],
-    },
+    
     {
       company: "What i do",
       role: "Full-Stack Developer",
@@ -123,7 +95,35 @@ const ExperienceArray = () => {
         },
       ],
     },
-
+    {
+      company: "Ecospace Services LTD",
+      role: "Full-Stack Developer",
+      description:
+        "Ecospace Services Limited is a geospatial firm that offers cutting-edge targeted spatial solutions and consultancy services in Land, Engineering Survey, Training, Drone Mapping, Technical Support, and Application Development among others.\nThe company has a team of experienced professionals who are committed to providing quality services to their clients.\nEcospace Services Limited is a reliable partner for businesses of all sizes.",
+      website: "https://espace.co.ke/",
+      image: "/assets/Ecospace.jpg",
+      startDate: "Jan 2022",
+      endDate: "July 2023",
+      tags: "Work",
+      points: [
+        "Developed mobile and web applications from concept to launch, using technologies such as ReactJS, NodeJS and Flutter",
+        "Led the design and development of multiple enterprise-level microservice applications",
+        "Worked closely with clients to understand their needs and requirements for geospatial solutions, and incorporated feedback into the development process",
+        "Designed and implemented custom maps and geospatial tools for a variety of industries, including agriculture, transportation, and natural resource management",
+      ],
+      badges: [
+        {
+          id: 1,
+          name: "Contracted",
+          color: "blue",
+        },
+        {
+          id: 2,
+          name: "Completed",
+          color: "green",
+        },
+      ],
+    },
     {
       company: "Nywele Nyumbani",
       role: "Front End Developer",
@@ -132,7 +132,7 @@ const ExperienceArray = () => {
       website: "https://home.nywelenyumbani.co.ke/",
       image: "/assets/nywele.png",
       startDate: "December 2020",
-      endDate: "May 2022",
+      endDate: "January 2023",
       tags: "Internship",
       points: [
         "Developed the UI for the Nywele Nyumbani's website and mobile app",
@@ -188,7 +188,7 @@ const ExperienceArray = () => {
       startDate: "Aug 2020",
       description: "Kicks and Heels is an online shoe retailer in Kenya that offers a diverse collection of footwear to shop from. They offer home delivery, a safe and secure checkout and payment & overally a seamless customer experience.",
       image: "/assets/kicks.jpg",
-      endDate: "Dec 2021",
+      endDate: "Dec 2022",
       website: "http://kicksnheels.co.ke/",
       tags: "Work",
       points: [

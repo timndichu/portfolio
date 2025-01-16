@@ -41,7 +41,7 @@ export default function About({ color }) {
           </Text>
           <Center>
             <Box width="fit-content" align='center'>
-              <Link href='https://drive.google.com/file/d/1J67w0FD5K2h4UpTc-zOVCeR8hhpAMTqf/view' textDecoration="none" isExternal>
+              <Link href='https://drive.google.com/file/d/1FdQhJT0xIZGQe_te_kyHceiIOaUxlRRD/view' textDecoration="none" isExternal>
                 <Button rightIcon={<BsDownload />} color={`${color}.400`} textDecoration="none" >
                   Download Resume
                 </Button>

@@ -3,6 +3,22 @@
 const ProjectsArray = () => {
 
   const projects = [
+    
+    {
+      "name": "J-Uza Ecommerce platform",
+      "tags": "Work",
+      "description": "Worked on an ecommerce platform.  It allows multiple vendors to sell on one mega platform and connects them to clients.",
+      "image": "/assets/svg-juza-plain.svg",
+      "badges": [
+        {
+          id: 1,
+          name: "Complete",
+          color: "green"
+        }
+      ],
+      "link": "https://j-uza.com",
+
+    },
     {
       "name": "What i do social media platform",
       "tags": "Work",
@@ -11,8 +27,8 @@ const ProjectsArray = () => {
       "badges": [
         {
           id: 1,
-          name: "Ongoing",
-          color: "orange"
+          name: "Complete",
+          color: "green"
         }
       ],
       "link": "https://whatido.app",

@@ -34,22 +34,7 @@ const ProjectsArray = () => {
       "link": "https://whatido.app",
 
     },
-    {
-      "name": "Kicks and Heels",
-      "tags": "Work",
-      "description": "Co-founded Kicks and Heels which is an ecommerce app that offers a diverse collection of footwear to shop from. We offer home delivery, a safe and secure checkout and payment & overally a seamless customer experience. The mobile app was built in Flutter and the Backend in Node.js",
-      "image": "/assets/kicks.jpg",
-      "badges": [
-
-        {
-          id: 2,
-          name: "Completed",
-          color: "green"
-        }
-      ],
-      "link": "https://kicksnheels.co.ke/",
-
-    },
+   
     {
       "name": "Nanosatellite Dashboard",
       "tags": "School",
@@ -67,8 +52,23 @@ const ProjectsArray = () => {
       "github": "https://github.com/timndichu/NanosatReactApp"
 
     },
+    /*
+    {
+      "name": "Kicks and Heels",
+      "tags": "Work",
+      "description": "Co-founded Kicks and Heels which is an ecommerce app that offers a diverse collection of footwear to shop from. We offer home delivery, a safe and secure checkout and payment & overally a seamless customer experience. The mobile app was built in Flutter and the Backend in Node.js",
+      "image": "/assets/kicks.jpg",
+      "badges": [
 
+        {
+          id: 2,
+          name: "Completed",
+          color: "green"
+        }
+      ],
+      "link": "https://kicksnheels.co.ke/",
 
+    },
     {
       "name": "Land Cover Collection App",
       "tags": "Work",
@@ -102,6 +102,7 @@ const ProjectsArray = () => {
       "link": "https://home.nywelenyumbani.co.ke/",
 
     },
+    */
 
 
   ]

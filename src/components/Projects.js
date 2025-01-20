@@ -23,7 +23,7 @@ import {FaGithub} from "react-icons/fa"
 export default function Projects({ color }) {
   const projects = ProjectsArray();
 
-  const options = ["All", "Work", "School", "Internship"];
+  const options = ["All", "Work", "School"];
 
   const [selected, setSelected] = useState("All");
 

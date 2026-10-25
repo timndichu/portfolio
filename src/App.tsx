@@ -23,13 +23,98 @@ const projects: Project[] = [
     demo: "https://victorycakes.co.ke/" },
 ];
 
+  { number: "04", name: "1U Nanosatellite Monitoring", category: "Real-time telemetry",
+    description: "A mobile app and responsive web dashboard for nanosatellite telemetry received through a VHF ground station, using WebSockets for near-real-time updates.",
+    focus: "Streaming telemetry to multiple client interfaces with timely updates.",
+    stack: ["WebSockets", "Real-time data", "Mobile", "Web dashboard"] },
+  { number: "05", name: "What I Do — Real-Time Audio", category: "Social audio platform",
+    description: "A real-time audio chatroom built with Node.js and WebSockets, with room management, participant controls, recording, and playback.",
+    focus: "Real-time room events, participant state, and audio session workflows.",
+    stack: ["Node.js", "WebSockets", "Real-time systems", "Audio"] },
+  { number: "06", name: "J-Uza Marketplace", category: "Multi-vendor commerce",
+    description: "A multi-vendor marketplace with product, vendor, inventory, order, and transaction workflows, including vendor tooling and payment integrations.",
+    focus: "Clear service/API boundaries across inventory, checkout, and external payment providers.",
+    stack: ["Next.js", "React", "Redux", "Node.js", "PostgreSQL", "M-PESA", "Flutterwave"],
+    demo: "https://j-uza.com/" },
+
+const experiences = [
+  {
+    company: "Inlaks Limited",
+    role: "Fintech Consultant / Banking Technology Architect",
+    period: "November 2023 — Present",
+    summary: "Enterprise banking integrations and production reliability across channel services, transaction processing, and banking data platforms.",
+    lens: "Concurrency, event streaming, adapter boundaries, idempotency, timeout behaviour, and resilient transaction flows.",
+    examples: ["National Bank of Malawi · digital channels & transaction processing", "Central Bank of Kenya · Kafka to Temenos Data Hub", "GTI Bank · API reliability & transaction idempotency", "Akiba Commercial Bank · mobile banking APIs"],
+    points: [
+      "Built a multithreaded background service for loaded transactions, reducing processing from 3 minutes to 40 seconds for 762 transactions; cleared 119,177 offline ATM transactions in 26 minutes.",
+      "Reduced connection contention across 30+ channel services by tuning connection pools and moving services from the default core adapter to custom TCP adapters.",
+      "Built and enhanced Kafka data-streaming services into Temenos Data Hub, contributed to streamed-data modelling, and supported Docker workloads on Red Hat OpenShift with Kafka and Spark.",
+      "Implemented Funds Transfer idempotency using a unique transaction identifier; aligned timeout behaviour across layers and corrected middleware handling of override and business-error responses.",
+      "Retrofitted integrations for Temenos Transact upgrades, improved database performance through indexing and partitioning, and developed or enhanced approximately 20 mobile-banking APIs for Akiba Commercial Bank."
+    ]
+  },
+  {
+    company: "App Town Technologies",
+    role: "CTO & Full-Stack Developer",
+    period: "January 2023 — November 2023",
+    summary: "Led technical direction and full-stack delivery for J-Uza, a multi-vendor marketplace connecting customers with providers of sustainable products and solutions.",
+    lens: "API boundaries and data consistency across vendor, catalog, inventory, order, and transaction workflows, including integrations with external payment providers.",
+    examples: ["J-Uza multi-vendor marketplace", "Vendor catalog and inventory tools", "M-PESA and Flutterwave checkout integrations"],
+    points: [
+      "Designed the REST API layer behind product, vendor, inventory, order, and transaction workflows.",
+      "Built vendor tooling for product listings, inventory tracking, and order administration, enabling providers to manage their own catalog and fulfillment.",
+      "Integrated M-PESA and Flutterwave for mobile-money and card payments at checkout.",
+      "Set architecture and delivery priorities with a small product team and partnered with the CEO and platform administrators; the platform supported onboarding of 5+ major vendors across East Africa."
+    ]
+  },
+  {
+    company: "Ecospace Services Ltd",
+    role: "Full-Stack Developer",
+    period: "January 2022 — January 2023",
+    summary: "Built web and mobile features for Ecofield, a geospatial portal for publishing, visualizing, and querying spatial datasets used in land, agriculture, planning, and infrastructure work.",
+    lens: "Data ingestion and interoperability between client interfaces, APIs, and heterogeneous geospatial formats.",
+    examples: ["Ecofield geospatial portal", "KML/KMZ, Shapefile, and GeoJSON upload tools", "Web and mobile mapping features"],
+    points: [
+      "Built upload and mapping tools for KML/KMZ, Shapefile, and GeoJSON, allowing clients to define and visualize resource boundaries.",
+      "Delivered web and mobile features with React, Node.js, and Flutter for securely publishing, visualizing, and querying spatial datasets.",
+      "Worked with government organizations and cross-functional teams to translate requirements into working software."
+    ]
+  },
+  {
+    company: "Kicks and Heels",
+    role: "Co-founder & Full-Stack Developer",
+    period: "August 2020 — December 2021",
+    summary: "Co-founded and built a cross-platform shoe-commerce app, owning the backend, data model, payments, deployment, and maintenance.",
+    lens: "Transactional consistency during concurrent checkout, particularly atomic stock updates and boundaries with external payment providers.",
+    examples: ["Cross-platform shoe marketplace", "Concurrent checkout and stock management", "M-PESA and Flutterwave payments"],
+    points: [
+      "Built the Flutter mobile app and Node.js backend with MongoDB, including authentication, product management, and order processing.",
+      "Prevented overselling with atomic database-level stock updates so items could not be ordered after stock ran out during concurrent checkouts.",
+      "Integrated M-PESA and Flutterwave payments and owned database design, AWS deployment, and maintenance.",
+      "Led university marketing campaigns that drove 100+ purchases within days, with orders from multiple counties."
+    ]
+  },
+  {
+    company: "Nywele Nyumbani",
+    role: "Freelance Frontend Developer",
+    period: "December 2020 — January 2022",
+    summary: "Built booking and scheduling experiences for a platform connecting clients with hairstylists.",
+    lens: "Representing time-sensitive appointment availability clearly across the booking interface and stylists' scheduling workflows.",
+    examples: ["Booking and scheduling system", "Real-time slot availability", "Responsive Flutter interfaces"],
+    points: [
+      "Built booking and scheduling functionality with real-time slot availability and appointment management for stylists.",
+      "Developed responsive web and mobile interfaces in Flutter to provide a consistent experience across devices."
+    ]
+  }
+];
+
 const skills = [
   { title: "Backend & APIs", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Express", "Hono", "REST APIs"] },
   { title: "Data & reliability", items: ["PostgreSQL", "SQL", "Drizzle ORM", "Database indexing", "Migrations", "Automated testing"] },
   { title: "Frontend & mobile", items: ["React", "Next.js", "React Native", "Flutter", "Tailwind CSS"] },
   { title: "Infrastructure", items: ["Docker", "Linux", "AWS", "Apache Kafka", "Git", "CI/CD"] },
 ];
-const nav = [["Work", "#work"], ["Approach", "#approach"], ["Skills", "#skills"], ["About", "#about"], ["Contact", "#contact"]];
+const nav = [["Work", "#work"], ["Experience", "#experience"], ["Approach", "#approach"], ["Skills", "#skills"], ["About", "#about"], ["Contact", "#contact"]];
 
 function Arrow() { return <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>; }
 function Heading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
@@ -65,6 +150,38 @@ export default function App() {
         <div className="grid gap-5 lg:grid-cols-3">{projects.map(p => <article key={p.number} className="group flex flex-col rounded-2xl border border-white/10 bg-panel/80 p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-7"><div className="mb-8 flex items-center justify-between"><span className="font-mono text-xs text-accent">{p.number} / PROJECT</span><span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-muted">{p.category}</span></div><h3 className="text-xl font-semibold tracking-tight">{p.name}</h3><p className="mt-4 flex-1 text-sm leading-7 text-muted">{p.description}</p><div className="mt-5 border-l-2 border-accent/50 pl-3"><p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Engineering focus</p><p className="mt-1 text-sm leading-6 text-white/85">{p.focus}</p></div><div className="mt-6 flex flex-wrap gap-2">{p.stack.map(t => <span key={t} className="rounded-md border border-white/[0.09] bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-muted">{t}</span>)}</div><div className="mt-7 flex gap-4 border-t border-white/10 pt-5 text-sm">{p.source && <a className="group/link text-white hover:text-accent" href={p.source} target="_blank" rel="noreferrer">Source code <Arrow /></a>}{p.demo && <a className="group/link text-accent hover:text-lime-300" href={p.demo} target="_blank" rel="noreferrer">Live site <Arrow /></a>}</div></article>)}</div>
         <p className="mt-6 text-xs leading-6 text-muted">Project descriptions focus on implemented scope; deeper technical write-ups can be added as individual case studies evolve.</p>
       </div></section>
+
+      <section id="experience" className="border-y border-white/[0.07] bg-white/[0.015]">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24">
+          <Heading eyebrow="Experience / 02" title="Engineering across connected systems." description="My experience spans enterprise banking, multi-vendor commerce, geospatial data, and real-time applications. For each role, I’ve highlighted the distributed-systems design concerns that are grounded in the work." />
+          <div className="space-y-5">
+            {experiences.map((experience, index) => (
+              <article key={experience.company} className="grid gap-6 rounded-2xl border border-white/10 bg-panel/70 p-6 sm:p-8 lg:grid-cols-[0.72fr_1.28fr]">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{experience.period}</p>
+                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">{experience.company}</h3>
+                  <p className="mt-2 text-sm leading-6 text-white/80">{experience.role}</p>
+                  <p className="mt-4 text-sm leading-7 text-muted">{experience.summary}</p>
+                  <div className="mt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Systems / project examples</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {experience.examples.map((example) => <span key={example} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs leading-5 text-white/80">{example}</span>)}
+                    </div>
+                  </div>
+                </div>
+                <div className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Distributed-systems lens</p>
+                  <p className="mt-3 text-sm leading-7 text-white/90">{experience.lens}</p>
+                  <ul className="mt-5 space-y-3">
+                    {experience.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-7 text-muted"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" /><span>{point}</span></li>)}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="approach" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"><Heading eyebrow="Engineering approach / 02" title="Good engineering is more than shipping features." description="I’m interested in the decisions that make software easier to change, operate, and understand when things go wrong." /><div className="grid gap-4 md:grid-cols-3">{[["01", "Reliable by design", "Think about retries, duplicate requests, validation, failure paths, and clear API contracts—not only the successful request."], ["02", "Data deserves attention", "Model data intentionally. Understand query behaviour, indexing, migrations, and the cost of abstraction as systems grow."], ["03", "Test the important paths", "Use focused unit and integration tests to protect business rules and make refactoring safer."]].map(([n, t, b]) => <div key={n} className="rounded-xl border border-white/10 bg-panel/50 p-6"><span className="font-mono text-xs text-accent">{n}</span><h3 className="mt-5 text-lg font-semibold">{t}</h3><p className="mt-3 text-sm leading-7 text-muted">{b}</p></div>)}</div></section>
       <section id="skills" className="border-y border-white/[0.07] bg-white/[0.015]"><div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"><Heading eyebrow="Toolkit / 03" title="Tools I use to get the job done." description="A practical toolkit across backend services, data, frontend applications, and infrastructure." /><div className="grid gap-4 sm:grid-cols-2">{skills.map(g => <div key={g.title} className="rounded-xl border border-white/10 bg-panel/60 p-6"><h3 className="text-sm font-semibold">{g.title}</h3><div className="mt-4 flex flex-wrap gap-2">{g.items.map(i => <span key={i} className="rounded-lg border border-white/10 px-3 py-2 text-xs text-muted transition hover:border-accent/30 hover:text-white">{i}</span>)}</div></div>)}</div></div></section>
       <section id="about" className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:py-24"><div><Heading eyebrow="Background / 04" title="A systems mindset, from the ground up." /><img src="/assets/HEADSHOT.jpg" alt="Portrait of Timothy Ndichu" className="aspect-[4/3] w-full max-w-sm rounded-2xl border border-white/10 object-cover object-center" loading="lazy" /></div><div className="space-y-6 pt-1"><p className="text-lg leading-8 text-white/90">My background in Electronics and Computer Engineering shaped how I approach software: understand the components, follow the data, and pay attention to how the whole system behaves.</p><p className="leading-8 text-muted">Alongside full-stack application development, I’ve worked in enterprise banking technology and integrations, where troubleshooting, database performance, messaging, and operational constraints matter. I enjoy connecting those experiences with hands-on projects that help me explore architecture and reliability in more depth.</p><div className="rounded-xl border border-white/10 bg-panel/60 p-5"><p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Professional experience</p><h3 className="mt-3 font-semibold">Inlaks — T24 Consultant / Local Technical Architect</h3><p className="mt-2 text-sm leading-7 text-muted">Enterprise banking systems, integrations, application infrastructure, and production troubleshooting.</p></div><div className="rounded-xl border border-white/10 bg-panel/60 p-5"><p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Education</p><h3 className="mt-3 font-semibold">BSc Electronics and Computer Engineering</h3><p className="mt-2 text-sm leading-7 text-muted">Jomo Kenyatta University of Agriculture and Technology (JKUAT).</p></div></div></section>

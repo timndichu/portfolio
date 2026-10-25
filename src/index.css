@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-body {
-  margin: 0;
-  font-family: 'Inter' !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+:root { color-scheme: dark; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; background: #0b0f0d; }
+html { scroll-padding-top: 5rem; }
+body { margin: 0; min-width: 320px; background: #0b0f0d; }
+::selection { color: #0b0f0d; background: #a3e635; }
+a { text-decoration: none; }
+:focus-visible { outline: 2px solid #a3e635; outline-offset: 4px; }
+.bg-grid { background-image: linear-gradient(rgba(163, 230, 53, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(163, 230, 53, .035) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 85%); }

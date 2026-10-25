@@ -1,39 +1,116 @@
 import { useState } from "react";
 
 type Project = {
-  number: string; name: string; category: string; description: string; focus: string;
-  stack: string[]; source?: string; demo?: string;
+  number: string;
+  name: string;
+  category: string;
+  description: string;
+  focus: string;
+  stack: string[];
+  source?: string;
+  demo?: string;
 };
 
 const projects: Project[] = [
-  { number: "01", name: "Mini Ticket Tracker", category: "Full-stack application",
-    description: "A ticket management application built around a typed REST API, relational persistence, request validation, pagination, and automated integration tests.",
-    focus: "Clear ticket workflows, maintainable APIs, and reliable data handling.",
-    stack: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "Zod"],
-    source: "https://github.com/timndichu/mini-ticket-tracker", demo: "https://mini-ticket-tracker.vercel.app/" },
-  { number: "02", name: "Distributed Systems Labs", category: "Engineering experiments",
-    description: "A hands-on repository for exploring distributed-systems behaviour through focused implementations, including idempotency and duplicate request handling.",
-    focus: "Understanding failure modes and reliability guarantees beyond the happy path.",
-    stack: ["Node.js", "TypeScript", "APIs", "Idempotency", "Database constraints"],
-    source: "https://github.com/timndichu/distributed-systems-labs" },
-  { number: "03", name: "Victory Cakes", category: "Customer-facing platform",
-    description: "A cake business website with a React frontend, lightweight API, PostgreSQL persistence, cloud-backed image storage, and WhatsApp-based order initiation.",
-    focus: "A clear online storefront and practical ordering flow for a small business.",
-    stack: ["React", "TypeScript", "Hono", "PostgreSQL", "Drizzle ORM", "Cloudflare"],
-    demo: "https://victorycakes.co.ke/" },
-{ number: "04", name: "1U Nanosatellite Monitoring", category: "Real-time telemetry",
-    description: "A mobile app and responsive web dashboard for nanosatellite telemetry received through a VHF ground station, using WebSockets for near-real-time updates.",
-    focus: "Streaming telemetry to multiple client interfaces with timely updates.",
-    stack: ["WebSockets", "Real-time data", "Mobile", "Web dashboard"] },
-  { number: "05", name: "What I Do — Real-Time Audio", category: "Social audio platform",
-    description: "A real-time audio chatroom built with Node.js and WebSockets, with room management, participant controls, recording, and playback.",
-    focus: "Real-time room events, participant state, and audio session workflows.",
-    stack: ["Node.js", "WebSockets", "Real-time systems", "Audio"] },
-  { number: "06", name: "J-Uza Marketplace", category: "Multi-vendor commerce",
-    description: "A multi-vendor marketplace with product, vendor, inventory, order, and transaction workflows, including vendor tooling and payment integrations.",
-    focus: "Clear service/API boundaries across inventory, checkout, and external payment providers.",
-    stack: ["Next.js", "React", "Redux", "Node.js", "PostgreSQL", "M-PESA", "Flutterwave"],
-    demo: "https://j-uza.com/" },
+  {
+    number: "01",
+    name: "What I Do — Real-Time Audio",
+    category: "Social audio platform",
+    description:
+      "A real-time audio chatroom built with Node.js and WebSockets, with room management, participant controls, recording, and playback.",
+    focus:
+      "Real-time room events, participant state, and audio session workflows.",
+    stack: ["Node.js", "WebSockets", "Real-time systems", "Audio"],
+    demo: "https://whatido.app/",
+  },
+  {
+    number: "02",
+    name: "J-Uza Marketplace",
+    category: "Multi-vendor commerce",
+    description:
+      "A multi-vendor marketplace with product, vendor, inventory, order, and transaction workflows, including vendor tooling and payment integrations.",
+    focus:
+      "Clear service/API boundaries across inventory, checkout, and external payment providers.",
+    stack: [
+      "Next.js",
+      "React",
+      "Redux",
+      "Node.js",
+      "PostgreSQL",
+      "M-PESA",
+      "Flutterwave",
+    ],
+    demo: "https://j-uza.com/",
+  },
+  
+  {
+    number: "03",
+    name: "Distributed Systems Labs",
+    category: "Engineering experiments",
+    description:
+      "An ongoing hands-on repository for exploring distributed-systems behaviour through focused implementations, including idempotency and duplicate request handling.",
+    focus:
+      "Understanding failure modes and reliability guarantees beyond the happy path.",
+    stack: [
+      "Node.js",
+      "TypeScript",
+      "APIs",
+      "Idempotency",
+      "Database constraints",
+    ],
+    source: "https://github.com/timndichu/distributed-systems-labs",
+    demo: "https://prodsmith-web.vercel.app/",
+  },
+  {
+    number: "04",
+    name: "Victory Cakes",
+    category: "Customer-facing platform",
+    description:
+      "A cake business website with a React frontend, lightweight API, PostgreSQL persistence, cloud-backed image storage, and WhatsApp-based order initiation.",
+    focus:
+      "A clear online storefront and practical ordering flow for a small business.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Hono",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Cloudflare",
+    ],
+    demo: "https://victorycakes.co.ke/",
+  },
+  {
+    number: "05",
+    name: "1U Nanosatellite Monitoring",
+    category: "Real-time telemetry",
+    description:
+      "A mobile app and responsive web dashboard for nanosatellite telemetry received through a VHF ground station, using WebSockets for near-real-time updates.",
+    focus:
+      "Streaming telemetry to multiple client interfaces with timely updates.",
+    stack: ["WebSockets", "Real-time data", "Mobile", "Web dashboard"],
+    source: "https://github.com/timndichu/NanosatReactApp",
+    demo: "http://tafitiproject.web.app/",
+  },
+  {
+    number: "06",
+    name: "Mini Ticket Tracker",
+    category: "Full-stack application",
+    description:
+      "A ticket management application built around a typed REST API, relational persistence, request validation, pagination, and automated integration tests.",
+    focus:
+      "Clear ticket workflows, maintainable APIs, and reliable data handling.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Express",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Zod",
+    ],
+    source: "https://github.com/timndichu/mini-ticket-tracker",
+    demo: "https://mini-ticket-tracker.vercel.app/",
+  },
+  
 ];
 
 const experiences = [
@@ -41,152 +118,742 @@ const experiences = [
     company: "Inlaks Limited",
     role: "Fintech Consultant / Banking Technology Architect",
     period: "November 2023 — Present",
-    summary: "Enterprise banking integrations and production reliability across channel services, transaction processing, and banking data platforms.",
+    summary:
+      "Enterprise banking integrations and production reliability across channel services, transaction processing, and banking data platforms.",
     lens: "Concurrency, event streaming, adapter boundaries, idempotency, timeout behaviour, and resilient transaction flows.",
-    examples: ["National Bank of Malawi · digital channels & transaction processing", "Central Bank of Kenya · Kafka to Temenos Data Hub", "GTI Bank · API reliability & transaction idempotency", "Akiba Commercial Bank · mobile banking APIs"],
+    examples: [
+      "National Bank of Malawi · digital channels & transaction processing",
+      "Central Bank of Kenya · Kafka to Temenos Data Hub",
+      "GTI Bank · API reliability & transaction idempotency",
+      "Akiba Commercial Bank · mobile banking APIs",
+    ],
     points: [
       "Built a multithreaded background service for loaded transactions, reducing processing from 3 minutes to 40 seconds for 762 transactions; cleared 119,177 offline ATM transactions in 26 minutes.",
       "Reduced connection contention across 30+ channel services by tuning connection pools and moving services from the default core adapter to custom TCP adapters.",
       "Built and enhanced Kafka data-streaming services into Temenos Data Hub, contributed to streamed-data modelling, and supported Docker workloads on Red Hat OpenShift with Kafka and Spark.",
       "Implemented Funds Transfer idempotency using a unique transaction identifier; aligned timeout behaviour across layers and corrected middleware handling of override and business-error responses.",
-      "Retrofitted integrations for Temenos Transact upgrades, improved database performance through indexing and partitioning, and developed or enhanced approximately 20 mobile-banking APIs for Akiba Commercial Bank."
-    ]
+      "Retrofitted integrations for Temenos Transact upgrades, improved database performance through indexing and partitioning, and developed or enhanced approximately 20 mobile-banking APIs for Akiba Commercial Bank.",
+    ],
   },
   {
     company: "App Town Technologies",
     role: "CTO & Full-Stack Developer",
     period: "January 2023 — November 2023",
-    summary: "Led technical direction and full-stack delivery for J-Uza, a multi-vendor marketplace connecting customers with providers of sustainable products and solutions.",
+    summary:
+      "Led technical direction and full-stack delivery for J-Uza, a multi-vendor marketplace connecting customers with providers of sustainable products and solutions.",
     lens: "API boundaries and data consistency across vendor, catalog, inventory, order, and transaction workflows, including integrations with external payment providers.",
-    examples: ["J-Uza multi-vendor marketplace", "Vendor catalog and inventory tools", "M-PESA and Flutterwave checkout integrations"],
+    examples: [
+      "J-Uza multi-vendor marketplace",
+      "Vendor catalog and inventory tools",
+      "M-PESA and Flutterwave checkout integrations",
+    ],
     points: [
       "Designed the REST API layer behind product, vendor, inventory, order, and transaction workflows.",
       "Built vendor tooling for product listings, inventory tracking, and order administration, enabling providers to manage their own catalog and fulfillment.",
       "Integrated M-PESA and Flutterwave for mobile-money and card payments at checkout.",
-      "Set architecture and delivery priorities with a small product team and partnered with the CEO and platform administrators; the platform supported onboarding of 5+ major vendors across East Africa."
-    ]
+      "Set architecture and delivery priorities with a small product team and partnered with the CEO and platform administrators; the platform supported onboarding of 5+ major vendors across East Africa.",
+    ],
   },
   {
     company: "Ecospace Services Ltd",
     role: "Full-Stack Developer",
     period: "January 2022 — January 2023",
-    summary: "Built web and mobile features for Ecofield, a geospatial portal for publishing, visualizing, and querying spatial datasets used in land, agriculture, planning, and infrastructure work.",
+    summary:
+      "Built web and mobile features for Ecofield, a geospatial portal for publishing, visualizing, and querying spatial datasets used in land, agriculture, planning, and infrastructure work.",
     lens: "Data ingestion and interoperability between client interfaces, APIs, and heterogeneous geospatial formats.",
-    examples: ["Ecofield geospatial portal", "KML/KMZ, Shapefile, and GeoJSON upload tools", "Web and mobile mapping features"],
+    examples: [
+      "Ecofield geospatial portal",
+      "KML/KMZ, Shapefile, and GeoJSON upload tools",
+      "Web and mobile mapping features",
+    ],
     points: [
       "Built upload and mapping tools for KML/KMZ, Shapefile, and GeoJSON, allowing clients to define and visualize resource boundaries.",
       "Delivered web and mobile features with React, Node.js, and Flutter for securely publishing, visualizing, and querying spatial datasets.",
-      "Worked with government organizations and cross-functional teams to translate requirements into working software."
-    ]
+      "Worked with government organizations and cross-functional teams to translate requirements into working software.",
+    ],
   },
   {
     company: "Kicks and Heels",
     role: "Co-founder & Full-Stack Developer",
     period: "August 2020 — December 2021",
-    summary: "Co-founded and built a cross-platform shoe-commerce app, owning the backend, data model, payments, deployment, and maintenance.",
+    summary:
+      "Co-founded and built a cross-platform shoe-commerce app, owning the backend, data model, payments, deployment, and maintenance.",
     lens: "Transactional consistency during concurrent checkout, particularly atomic stock updates and boundaries with external payment providers.",
-    examples: ["Cross-platform shoe marketplace", "Concurrent checkout and stock management", "M-PESA and Flutterwave payments"],
+    examples: [
+      "Cross-platform shoe marketplace",
+      "Concurrent checkout and stock management",
+      "M-PESA and Flutterwave payments",
+    ],
     points: [
       "Built the Flutter mobile app and Node.js backend with MongoDB, including authentication, product management, and order processing.",
       "Prevented overselling with atomic database-level stock updates so items could not be ordered after stock ran out during concurrent checkouts.",
       "Integrated M-PESA and Flutterwave payments and owned database design, AWS deployment, and maintenance.",
-      "Led university marketing campaigns that drove 100+ purchases within days, with orders from multiple counties."
-    ]
+      "Led university marketing campaigns that drove 100+ purchases within days, with orders from multiple counties.",
+    ],
   },
   {
     company: "Nywele Nyumbani",
     role: "Freelance Frontend Developer",
     period: "December 2020 — January 2022",
-    summary: "Built booking and scheduling experiences for a platform connecting clients with hairstylists.",
+    summary:
+      "Built booking and scheduling experiences for a platform connecting clients with hairstylists.",
     lens: "Representing time-sensitive appointment availability clearly across the booking interface and stylists' scheduling workflows.",
-    examples: ["Booking and scheduling system", "Real-time slot availability", "Responsive Flutter interfaces"],
+    examples: [
+      "Booking and scheduling system",
+      "Real-time slot availability",
+      "Responsive Flutter interfaces",
+    ],
     points: [
       "Built booking and scheduling functionality with real-time slot availability and appointment management for stylists.",
-      "Developed responsive web and mobile interfaces in Flutter to provide a consistent experience across devices."
-    ]
-  }
+      "Developed responsive web and mobile interfaces in Flutter to provide a consistent experience across devices.",
+    ],
+  },
 ];
 
 const skills = [
-  { title: "Backend & APIs", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Express", "Hono", "REST APIs"] },
-  { title: "Data & reliability", items: ["PostgreSQL", "SQL", "Drizzle ORM", "Database indexing", "Migrations", "Automated testing"] },
-  { title: "Frontend & mobile", items: ["React", "Next.js", "React Native", "Flutter", "Tailwind CSS"] },
-  { title: "Infrastructure", items: ["Docker", "Linux", "AWS", "Apache Kafka", "Git", "CI/CD"] },
+  {
+    title: "Backend & APIs",
+    items: [
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Hono",
+      "REST APIs",
+    ],
+  },
+  {
+    title: "Data & reliability",
+    items: [
+      "PostgreSQL",
+      "SQL",
+      "Drizzle ORM",
+      "Database indexing",
+      "Migrations",
+      "Automated testing",
+    ],
+  },
+  {
+    title: "Frontend & mobile",
+    items: ["React", "Next.js", "React Native", "Flutter", "Tailwind CSS"],
+  },
+  {
+    title: "Infrastructure",
+    items: ["Docker", "Linux", "AWS", "Apache Kafka", "Git", "CI/CD"],
+  },
 ];
-const nav = [["Work", "#work"], ["Experience", "#experience"], ["Approach", "#approach"], ["Skills", "#skills"], ["About", "#about"], ["Contact", "#contact"]];
+const nav = [
+  ["Work", "#work"],
+  ["Experience", "#experience"],
+  ["Approach", "#approach"],
+  ["Skills", "#skills"],
+  ["About", "#about"],
+  ["Contact", "#contact"],
+];
 
-function Arrow() { return <span aria-hidden="true" className="ml-1 inline-block transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>; }
-function Heading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
-  return <div className="mb-10 max-w-2xl"><p className="mb-3 font-mono text-xs uppercase tracking-[0.24em] text-accent">{eyebrow}</p><h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{title}</h2>{description && <p className="mt-4 leading-7 text-muted">{description}</p>}</div>;
+function Arrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="ml-1 inline-block transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+    >
+      ↗
+    </span>
+  );
+}
+function Heading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div className="mb-10 max-w-2xl">
+      <p className="mb-3 font-mono text-xs uppercase tracking-[0.24em] text-accent">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-4 leading-7 text-muted">{description}</p>
+      )}
+    </div>
+  );
 }
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  return <div className="min-h-screen overflow-hidden bg-ink text-white">
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-0 bg-grid opacity-30" />
-    <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-ink/90 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
-        <a href="#home" onClick={() => setMenuOpen(false)} className="flex items-center gap-3" aria-label="Timothy Ndichu, home"><span className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 font-mono text-sm font-bold text-accent">TN</span><span className="text-sm font-semibold tracking-wide">Timothy Ndichu<span className="text-accent">.</span></span></a>
-        <div className="hidden items-center gap-7 md:flex">{nav.map(([label, href]) => <a key={href} href={href} className="text-sm text-muted transition hover:text-white">{label}</a>)}<a href="mailto:timndichu@gmail.com" className="rounded-lg border border-accent/40 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent hover:text-ink">Get in touch <Arrow /></a></div>
-        <button type="button" className="rounded-md border border-white/15 px-3 py-2 text-sm md:hidden" aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "Close" : "Menu"}</button>
-      </nav>
-      {menuOpen && <div id="mobile-nav" className="border-t border-white/10 px-5 py-4 md:hidden"><div className="mx-auto flex max-w-6xl flex-col gap-4">{nav.map(([label, href]) => <a key={href} href={href} onClick={() => setMenuOpen(false)} className="text-sm text-muted hover:text-white">{label}</a>)}<a href="mailto:timndichu@gmail.com" className="text-sm text-accent">Get in touch ↗</a></div></div>}
-    </header>
-    <main className="relative z-10">
-      <section id="home" className="mx-auto grid min-h-[78vh] max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
-        <div><div className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.06] px-3 py-1.5 font-mono text-xs text-accent"><span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_#a3e635]" />SOFTWARE ENGINEER · BACKEND & FULL STACK</div>
-          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-0.055em] sm:text-6xl lg:text-7xl">I build software.<br /><span className="text-accent">I think in systems.</span></h1>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-muted sm:text-lg">I’m Timothy — a software engineer with a background in Electronics and Computer Engineering. I build web applications, backend services, and integrations, with a particular interest in reliability, data, and how systems behave in production.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><a href="#work" className="group inline-flex items-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-ink transition hover:bg-lime-300">Explore selected work <Arrow /></a><a href="https://drive.google.com/file/d/1otrK5Znf7GBV6nVV6CJRFUuF0aN2LG5R/view?usp=sharing" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-lg border border-white/15 px-5 py-3 text-sm font-medium transition hover:border-white/35 hover:bg-white/[0.04]">View resume ↗</a></div>
-          <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-6 text-sm text-muted"><a className="hover:text-accent" href="https://github.com/timndichu" target="_blank" rel="noreferrer">GitHub ↗</a><a className="hover:text-accent" href="https://www.linkedin.com/in/timothy-ndichu/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="hover:text-accent" href="https://medium.com/@timndichu" target="_blank" rel="noreferrer">Writing ↗</a></div>
-        </div>
-        <div className="relative mx-auto w-full max-w-md"><div aria-hidden="true" className="absolute -inset-4 rounded-3xl border border-accent/10" /><div className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel shadow-2xl shadow-black/30">
-          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3"><span className="h-2 w-2 rounded-full bg-white/20" /><span className="h-2 w-2 rounded-full bg-white/20" /><span className="h-2 w-2 rounded-full bg-accent/70" /><span className="ml-2 font-mono text-[11px] text-muted">engineering-notes.md</span></div>
-          <div className="space-y-5 p-6 sm:p-7"><p className="font-mono text-xs text-accent">{"// HOW I APPROACH ENGINEERING"}</p>{[["01", "Understand the problem", "Start with the user, constraints, and failure cases."], ["02", "Design for clarity", "Prefer explicit contracts and maintainable boundaries."], ["03", "Verify the behaviour", "Test assumptions, inspect data, and measure outcomes."]].map(([n, title, body]) => <div key={n} className="flex gap-4"><span className="pt-0.5 font-mono text-xs text-accent/70">{n}</span><div><h3 className="text-sm font-semibold">{title}</h3><p className="mt-1 text-sm leading-6 text-muted">{body}</p></div></div>)}<div className="rounded-xl border border-accent/15 bg-accent/[0.05] p-4"><p className="font-mono text-xs text-muted">CURRENT FOCUS</p><p className="mt-2 text-sm leading-6">Backend architecture · Distributed systems · Database performance</p></div></div>
-        </div><p className="mt-5 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-muted">Curiosity at the boundary of software and systems</p></div>
-      </section>
-      <section id="work" className="border-y border-white/[0.07] bg-white/[0.015]"><div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"><Heading eyebrow="Selected work / 01" title="Projects built to solve real problems." description="A few examples of how I approach application development, backend design, and reliability." />
-        <div className="grid gap-5 lg:grid-cols-3">{projects.map(p => <article key={p.number} className="group flex flex-col rounded-2xl border border-white/10 bg-panel/80 p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-7"><div className="mb-8 flex items-center justify-between"><span className="font-mono text-xs text-accent">{p.number} / PROJECT</span><span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-muted">{p.category}</span></div><h3 className="text-xl font-semibold tracking-tight">{p.name}</h3><p className="mt-4 flex-1 text-sm leading-7 text-muted">{p.description}</p><div className="mt-5 border-l-2 border-accent/50 pl-3"><p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Engineering focus</p><p className="mt-1 text-sm leading-6 text-white/85">{p.focus}</p></div><div className="mt-6 flex flex-wrap gap-2">{p.stack.map(t => <span key={t} className="rounded-md border border-white/[0.09] bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-muted">{t}</span>)}</div><div className="mt-7 flex gap-4 border-t border-white/10 pt-5 text-sm">{p.source && <a className="group/link text-white hover:text-accent" href={p.source} target="_blank" rel="noreferrer">Source code <Arrow /></a>}{p.demo && <a className="group/link text-accent hover:text-lime-300" href={p.demo} target="_blank" rel="noreferrer">Live site <Arrow /></a>}</div></article>)}</div>
-        <p className="mt-6 text-xs leading-6 text-muted">Project descriptions focus on implemented scope; deeper technical write-ups can be added as individual case studies evolve.</p>
-      </div></section>
+  return (
+    <div className="min-h-screen overflow-hidden bg-ink text-white">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-0 bg-grid opacity-30"
+      />
+      <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-ink/90 backdrop-blur-xl">
+        <nav
+          className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
+          aria-label="Main navigation"
+        >
+          <a
+            href="#home"
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-3"
+            aria-label="Timothy Ndichu, home"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 font-mono text-sm font-bold text-accent">
+              TN
+            </span>
+            <span className="text-sm font-semibold tracking-wide">
+              Timothy Ndichu<span className="text-accent">.</span>
+            </span>
+          </a>
+          <div className="hidden items-center gap-7 md:flex">
+            {nav.map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="text-sm text-muted transition hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="mailto:timndichu@gmail.com"
+              className="rounded-lg border border-accent/40 px-4 py-2 text-sm font-medium text-accent transition hover:bg-accent hover:text-ink"
+            >
+              Get in touch <Arrow />
+            </a>
+          </div>
+          <button
+            type="button"
+            className="rounded-md border border-white/15 px-3 py-2 text-sm md:hidden"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? "Close" : "Menu"}
+          </button>
+        </nav>
+        {menuOpen && (
+          <div
+            id="mobile-nav"
+            className="border-t border-white/10 px-5 py-4 md:hidden"
+          >
+            <div className="mx-auto flex max-w-6xl flex-col gap-4">
+              {nav.map(([label, href]) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-sm text-muted hover:text-white"
+                >
+                  {label}
+                </a>
+              ))}
+              <a
+                href="mailto:timndichu@gmail.com"
+                className="text-sm text-accent"
+              >
+                Get in touch ↗
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+      <main className="relative z-10">
+        <section
+          id="home"
+          className="mx-auto grid min-h-[78vh] max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:py-28"
+        >
+          <div>
+            {/* Badge: allow wrapping on small screens without breaking the pill shape */}
+            <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-2xl border border-accent/20 bg-accent/[0.06] px-3 py-1.5 font-mono text-xs text-accent sm:rounded-full">
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent shadow-[0_0_12px_#a3e635]"
+              />
+              SOFTWARE ENGINEER · BACKEND, INTEGRATIONS &amp; BANKING SYSTEMS
+            </div>
 
-      <section id="experience" className="border-y border-white/[0.07] bg-white/[0.015]">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24">
-          <Heading eyebrow="Experience / 02" title="Engineering across connected systems." description="My experience spans enterprise banking, multi-vendor commerce, geospatial data, and real-time applications. For each role, I’ve highlighted the distributed-systems design concerns that are grounded in the work." />
-          <div className="space-y-5">
-            {experiences.map((experience, index) => (
-              <article key={experience.company} className="grid gap-6 rounded-2xl border border-white/10 bg-panel/70 p-6 sm:p-8 lg:grid-cols-[0.72fr_1.28fr]">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{experience.period}</p>
-                  <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">{experience.company}</h3>
-                  <p className="mt-2 text-sm leading-6 text-white/80">{experience.role}</p>
-                  <p className="mt-4 text-sm leading-7 text-muted">{experience.summary}</p>
-                  <div className="mt-5">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Systems / project examples</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {experience.examples.map((example) => <span key={example} className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs leading-5 text-white/80">{example}</span>)}
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              I build systems
+              <span className="block text-balance text-accent">
+                that keep working when things go wrong.
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-2xl text-pretty text-base leading-8 text-muted sm:text-lg">
+              I’m Timothy, a software engineer who designs and tunes the backend
+              services behind banking, commerce, and real-time products. From
+              idempotent transaction flows to Kafka pipelines into Data
+              Hubs, I focus on reliability, data, and how systems behave in
+              production.
+            </p>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                className="group inline-flex items-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-ink transition hover:bg-lime-300"
+              >
+                Explore selected work <Arrow />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1otrK5Znf7GBV6nVV6CJRFUuF0aN2LG5R/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-lg border border-white/15 px-5 py-3 text-sm font-medium transition hover:border-white/35 hover:bg-white/[0.04]"
+              >
+                View resume ↗
+              </a>
+            </div>
+
+            {/* Proof strip */}
+            <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-6 sm:grid-cols-4">
+              {[
+               ["119,177", "ATM transactions made during a system outage, all posted to customer accounts in 26 minutes"],
+  ["4.5× faster", "loading of saved transactions into the bank's core system (3 min → 40 sec)"],
+  ["30+", "banking services made more reliable by fixing a shared bottleneck"],
+  ["~20", "mobile banking features built for a Tier-1 Commercial Bank in East Africa"],
+              ].map(([value, label]) => (
+                <div key={value}>
+                  <dt className="font-mono text-lg font-semibold text-accent sm:text-xl">
+                    {value}
+                  </dt>
+                  <dd className="mt-1 text-xs leading-5 text-muted">{label}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted">
+              {/* GitHub, LinkedIn, Writing links unchanged */}
+            </div>
+          </div>
+          <div className="relative mx-auto w-full max-w-md">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-3xl border border-accent/10"
+            />
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-panel shadow-2xl shadow-black/30">
+              <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+                <span className="h-2 w-2 rounded-full bg-white/20" />
+                <span className="h-2 w-2 rounded-full bg-white/20" />
+                <span className="h-2 w-2 rounded-full bg-accent/70" />
+                <span className="ml-2 font-mono text-[11px] text-muted">
+                  engineering-notes.md
+                </span>
+              </div>
+              <div className="space-y-5 p-6 sm:p-7">
+                <p className="font-mono text-xs text-accent">
+                  {"// HOW I APPROACH ENGINEERING"}
+                </p>
+                {[
+                  [
+                    "01",
+                    "Understand the problem",
+                    "Start with the user, constraints, and failure cases.",
+                  ],
+                  [
+                    "02",
+                    "Design for clarity",
+                    "Prefer explicit contracts and maintainable boundaries.",
+                  ],
+                  [
+                    "03",
+                    "Verify the behaviour",
+                    "Test assumptions, inspect data, and measure outcomes.",
+                  ],
+                ].map(([n, title, body]) => (
+                  <div key={n} className="flex gap-4">
+                    <span className="pt-0.5 font-mono text-xs text-accent/70">
+                      {n}
+                    </span>
+                    <div>
+                      <h3 className="text-sm font-semibold">{title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-muted">
+                        {body}
+                      </p>
                     </div>
                   </div>
+                ))}
+                <div className="rounded-xl border border-accent/15 bg-accent/[0.05] p-4">
+                  <p className="font-mono text-xs text-muted">CURRENT FOCUS</p>
+                  <p className="mt-2 text-sm leading-6">
+                    Backend architecture · Distributed systems · Database
+                    performance
+                  </p>
                 </div>
-                <div className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Distributed-systems lens</p>
-                  <p className="mt-3 text-sm leading-7 text-white/90">{experience.lens}</p>
-                  <ul className="mt-5 space-y-3">
-                    {experience.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-7 text-muted"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" /><span>{point}</span></li>)}
-                  </ul>
-                </div>
-              </article>
+              </div>
+            </div>
+            <p className="mt-5 text-center font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+              Electronics background. Software mindset.
+            </p>
+          </div>
+        </section>
+        <section
+          id="work"
+          className="border-y border-white/[0.07] bg-white/[0.015]"
+        >
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24">
+            <Heading
+              eyebrow="Selected work / 01"
+              title="Projects built to solve real problems."
+              description="A few examples of how I approach application development, backend design, and reliability."
+            />
+            <div className="grid gap-5 lg:grid-cols-3">
+              {projects.map((p) => (
+                <article
+                  key={p.number}
+                  className="group flex flex-col rounded-2xl border border-white/10 bg-panel/80 p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-7"
+                >
+                  <div className="mb-8 flex items-center justify-between">
+                    <span className="font-mono text-xs text-accent">
+                      {p.number} / PROJECT
+                    </span>
+                    <span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] uppercase tracking-wider text-muted">
+                      {p.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    {p.name}
+                  </h3>
+                  <p className="mt-4 flex-1 text-sm leading-7 text-muted">
+                    {p.description}
+                  </p>
+                  <div className="mt-5 border-l-2 border-accent/50 pl-3">
+                    <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">
+                      Engineering focus
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-white/85">
+                      {p.focus}
+                    </p>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {p.stack.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-md border border-white/[0.09] bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-muted"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-7 flex gap-4 border-t border-white/10 pt-5 text-sm">
+                    {p.source && (
+                      <a
+                        className="group/link text-white hover:text-accent"
+                        href={p.source}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Source code <Arrow />
+                      </a>
+                    )}
+                    {p.demo && (
+                      <a
+                        className="group/link text-accent hover:text-lime-300"
+                        href={p.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Live site <Arrow />
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+           
+          </div>
+        </section>
+
+        <section
+          id="experience"
+          className="border-y border-white/[0.07] bg-white/[0.015]"
+        >
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24">
+            <Heading
+              eyebrow="Experience / 02"
+              title="Engineering across connected systems."
+              description="My experience spans enterprise banking, multi-vendor commerce, geospatial data, and real-time applications. For each role, I’ve highlighted the distributed-systems design concerns that are grounded in the work."
+            />
+            <div className="space-y-5">
+              {experiences.map((experience, index) => (
+                <article
+                  key={experience.company}
+                  className="grid gap-6 rounded-2xl border border-white/10 bg-panel/70 p-6 sm:p-8 lg:grid-cols-[0.72fr_1.28fr]"
+                >
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                      {experience.period}
+                    </p>
+                    <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
+                      {experience.company}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-white/80">
+                      {experience.role}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-muted">
+                      {experience.summary}
+                    </p>
+                    <div className="mt-5">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">
+                        Systems / project examples
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {experience.examples.map((example) => (
+                          <span
+                            key={example}
+                            className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs leading-5 text-white/80"
+                          >
+                            {example}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="border-t border-white/10 pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                      Technical focus
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-white/90">
+                      {experience.lens}
+                    </p>
+                    <ul className="mt-5 space-y-3">
+                      {experience.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex gap-3 text-sm leading-7 text-muted"
+                        >
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="approach"
+          className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"
+        >
+          <Heading
+            eyebrow="Engineering approach / 03"
+            title="Good engineering is more than shipping features."
+            description="I’m interested in the decisions that make software easier to change, operate, and understand when things go wrong."
+          />
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              [
+                "01",
+                "Reliable by design",
+                "Think about retries, duplicate requests, validation, failure paths, and clear API contracts—not only the successful request.",
+              ],
+              [
+                "02",
+                "Data deserves attention",
+                "Model data intentionally. Understand query behaviour, indexing, migrations, and the cost of abstraction as systems grow.",
+              ],
+              [
+                "03",
+                "Test the important paths",
+                "Use focused unit and integration tests to protect business rules and make refactoring safer.",
+              ],
+            ].map(([n, t, b]) => (
+              <div
+                key={n}
+                className="rounded-xl border border-white/10 bg-panel/50 p-6"
+              >
+                <span className="font-mono text-xs text-accent">{n}</span>
+                <h3 className="mt-5 text-lg font-semibold">{t}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted">{b}</p>
+              </div>
             ))}
           </div>
+        </section>
+        <section
+          id="skills"
+          className="border-y border-white/[0.07] bg-white/[0.015]"
+        >
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24">
+            <Heading
+              eyebrow="Toolkit / 04"
+              title="Tools I use to get the job done."
+              description="A practical toolkit across backend services, data, frontend applications, and infrastructure."
+            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {skills.map((g) => (
+                <div
+                  key={g.title}
+                  className="rounded-xl border border-white/10 bg-panel/60 p-6"
+                >
+                  <h3 className="text-sm font-semibold">{g.title}</h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {g.items.map((i) => (
+                      <span
+                        key={i}
+                        className="rounded-lg border border-white/10 px-3 py-2 text-xs text-muted transition hover:border-accent/30 hover:text-white"
+                      >
+                        {i}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          id="about"
+          className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:py-24"
+        >
+          <div>
+            <Heading
+              eyebrow="Background / 05"
+              title="A systems mindset, from the ground up."
+            />
+            <img
+              src="/assets/HEADSHOT.jpg"
+              alt="Portrait of Timothy Ndichu"
+              className="aspect-[4/3] w-full max-w-sm rounded-2xl border border-white/10 object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+          <div className="space-y-6 pt-1">
+            <p className="text-lg leading-8 text-white/90">
+              My background in Electronics and Computer Engineering shaped how I
+              approach software: understand the components, follow the data, and
+              pay attention to how the whole system behaves.
+            </p>
+            <p className="leading-8 text-muted">
+              Alongside full-stack application development, I’ve worked in
+              enterprise banking technology and integrations, where
+              troubleshooting, database performance, messaging, and operational
+              constraints matter. I enjoy connecting those experiences with
+              hands-on projects that help me explore architecture and
+              reliability in more depth.
+            </p>
+            <div className="rounded-xl border border-white/10 bg-panel/60 p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                Education
+              </p>
+              <h3 className="mt-3 font-semibold">
+                BSc Electronics and Computer Engineering
+              </h3>
+              <p className="mt-2 text-sm leading-7 text-muted">
+                Jomo Kenyatta University of Agriculture and Technology (JKUAT).
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="border-y border-white/[0.07] bg-white/[0.015]">
+          <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+                  Notes from the workbench
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+                  I write about what I learn.
+                </h2>
+                <p className="mt-3 max-w-xl text-sm leading-7 text-muted">
+                  Practical engineering lessons, implementation details, and
+                  ideas worth exploring further.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://medium.com/@timndichu"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-white/15 px-4 py-3 text-sm hover:border-accent/40 hover:text-accent"
+                >
+                  Read on Medium ↗
+                </a>
+                <a
+                  href="https://dev.to/timndichu"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-white/15 px-4 py-3 text-sm hover:border-accent/40 hover:text-accent"
+                >
+                  Read on DEV ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id="contact"
+          className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-32"
+        >
+          <div className="relative overflow-hidden rounded-3xl border border-accent/20 bg-panel p-8 sm:p-12 lg:p-16">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-accent/[0.08] blur-3xl"
+            />
+            <div className="relative max-w-3xl">
+              <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
+                Contact / 06
+              </p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                Let’s build something that works well — and keeps working.
+              </h2>
+              <p className="mt-5 max-w-2xl leading-8 text-muted">
+                I’m open to thoughtful conversations about software engineering,
+                backend challenges, collaboration, and opportunities to build
+                useful products with good teams.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="mailto:timndichu@gmail.com"
+                  className="inline-flex items-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-ink hover:bg-lime-300"
+                >
+                  Email me <Arrow />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/timothy-ndichu/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-lg border border-white/15 px-5 py-3 text-sm font-medium hover:border-white/35"
+                >
+                  Connect on LinkedIn <Arrow />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="border-t border-white/[0.08]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p>
+            © {new Date().getFullYear()} Timothy Ndichu. Built with intention.
+          </p>
+          <div className="flex gap-5">
+            <a
+              href="https://github.com/timndichu"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-accent"
+            >
+              GitHub ↗
+            </a>
+            <a href="mailto:timndichu@gmail.com" className="hover:text-accent">
+              Email ↗
+            </a>
+            <a href="#home" className="hover:text-accent">
+              Back to top ↑
+            </a>
+          </div>
         </div>
-      </section>
-
-      <section id="approach" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"><Heading eyebrow="Engineering approach / 02" title="Good engineering is more than shipping features." description="I’m interested in the decisions that make software easier to change, operate, and understand when things go wrong." /><div className="grid gap-4 md:grid-cols-3">{[["01", "Reliable by design", "Think about retries, duplicate requests, validation, failure paths, and clear API contracts—not only the successful request."], ["02", "Data deserves attention", "Model data intentionally. Understand query behaviour, indexing, migrations, and the cost of abstraction as systems grow."], ["03", "Test the important paths", "Use focused unit and integration tests to protect business rules and make refactoring safer."]].map(([n, t, b]) => <div key={n} className="rounded-xl border border-white/10 bg-panel/50 p-6"><span className="font-mono text-xs text-accent">{n}</span><h3 className="mt-5 text-lg font-semibold">{t}</h3><p className="mt-3 text-sm leading-7 text-muted">{b}</p></div>)}</div></section>
-      <section id="skills" className="border-y border-white/[0.07] bg-white/[0.015]"><div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:py-24"><Heading eyebrow="Toolkit / 03" title="Tools I use to get the job done." description="A practical toolkit across backend services, data, frontend applications, and infrastructure." /><div className="grid gap-4 sm:grid-cols-2">{skills.map(g => <div key={g.title} className="rounded-xl border border-white/10 bg-panel/60 p-6"><h3 className="text-sm font-semibold">{g.title}</h3><div className="mt-4 flex flex-wrap gap-2">{g.items.map(i => <span key={i} className="rounded-lg border border-white/10 px-3 py-2 text-xs text-muted transition hover:border-accent/30 hover:text-white">{i}</span>)}</div></div>)}</div></div></section>
-      <section id="about" className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:py-24"><div><Heading eyebrow="Background / 04" title="A systems mindset, from the ground up." /><img src="/assets/HEADSHOT.jpg" alt="Portrait of Timothy Ndichu" className="aspect-[4/3] w-full max-w-sm rounded-2xl border border-white/10 object-cover object-center" loading="lazy" /></div><div className="space-y-6 pt-1"><p className="text-lg leading-8 text-white/90">My background in Electronics and Computer Engineering shaped how I approach software: understand the components, follow the data, and pay attention to how the whole system behaves.</p><p className="leading-8 text-muted">Alongside full-stack application development, I’ve worked in enterprise banking technology and integrations, where troubleshooting, database performance, messaging, and operational constraints matter. I enjoy connecting those experiences with hands-on projects that help me explore architecture and reliability in more depth.</p><div className="rounded-xl border border-white/10 bg-panel/60 p-5"><p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">Education</p><h3 className="mt-3 font-semibold">BSc Electronics and Computer Engineering</h3><p className="mt-2 text-sm leading-7 text-muted">Jomo Kenyatta University of Agriculture and Technology (JKUAT).</p></div></div></section>
-      <section className="border-y border-white/[0.07] bg-white/[0.015]"><div className="mx-auto max-w-6xl px-5 py-16 sm:px-8"><div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between"><div><p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Notes from the workbench</p><h2 className="mt-3 text-2xl font-semibold tracking-tight">I write about what I learn.</h2><p className="mt-3 max-w-xl text-sm leading-7 text-muted">Practical engineering lessons, implementation details, and ideas worth exploring further.</p></div><div className="flex flex-wrap gap-3"><a href="https://medium.com/@timndichu" target="_blank" rel="noreferrer" className="rounded-lg border border-white/15 px-4 py-3 text-sm hover:border-accent/40 hover:text-accent">Read on Medium ↗</a><a href="https://dev.to/timndichu" target="_blank" rel="noreferrer" className="rounded-lg border border-white/15 px-4 py-3 text-sm hover:border-accent/40 hover:text-accent">Read on DEV ↗</a></div></div></div></section>
-      <section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 lg:py-32"><div className="relative overflow-hidden rounded-3xl border border-accent/20 bg-panel p-8 sm:p-12 lg:p-16"><div aria-hidden="true" className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-accent/[0.08] blur-3xl" /><div className="relative max-w-3xl"><p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">Contact / 05</p><h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Let’s build something that works well — and keeps working.</h2><p className="mt-5 max-w-2xl leading-8 text-muted">I’m open to thoughtful conversations about software engineering, backend challenges, collaboration, and opportunities to build useful products with good teams.</p><div className="mt-8 flex flex-wrap gap-3"><a href="mailto:timndichu@gmail.com" className="inline-flex items-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-ink hover:bg-lime-300">Email me <Arrow /></a><a href="https://www.linkedin.com/in/timothy-ndichu/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-lg border border-white/15 px-5 py-3 text-sm font-medium hover:border-white/35">Connect on LinkedIn <Arrow /></a></div></div></div></section>
-    </main>
-    <footer className="border-t border-white/[0.08]"><div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8"><p>© {new Date().getFullYear()} Timothy Ndichu. Built with intention.</p><div className="flex gap-5"><a href="https://github.com/timndichu" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub ↗</a><a href="mailto:timndichu@gmail.com" className="hover:text-accent">Email ↗</a><a href="#home" className="hover:text-accent">Back to top ↑</a></div></div></footer>
-  </div>;
+      </footer>
+    </div>
+  );
 }

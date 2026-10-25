@@ -42,7 +42,7 @@ const projects: Project[] = [
     ],
     demo: "https://j-uza.com/",
   },
-  
+
   {
     number: "03",
     name: "Distributed Systems Labs",
@@ -110,7 +110,6 @@ const projects: Project[] = [
     source: "https://github.com/timndichu/mini-ticket-tracker",
     demo: "https://mini-ticket-tracker.vercel.app/",
   },
-  
 ];
 
 const experiences = [
@@ -390,9 +389,8 @@ export default function App() {
             <p className="mt-7 max-w-2xl text-pretty text-base leading-8 text-muted sm:text-lg">
               I’m Timothy, a software engineer who designs and tunes the backend
               services behind banking, commerce, and real-time products. From
-              idempotent transaction flows to Kafka pipelines into Data
-              Hubs, I focus on reliability, data, and how systems behave in
-              production.
+              idempotent transaction flows to Kafka pipelines into Data Hubs, I
+              focus on reliability, data, and how systems behave in production.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
@@ -403,7 +401,8 @@ export default function App() {
                 Explore selected work <Arrow />
               </a>
               <a
-                href="https://drive.google.com/file/d/1otrK5Znf7GBV6nVV6CJRFUuF0aN2LG5R/view?usp=sharing"
+                href="/timothy-ndichu-cv.pdf"
+                download="Timothy-Ndichu-CV.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center rounded-lg border border-white/15 px-5 py-3 text-sm font-medium transition hover:border-white/35 hover:bg-white/[0.04]"
@@ -415,10 +414,22 @@ export default function App() {
             {/* Proof strip */}
             <dl className="mt-12 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-6 sm:grid-cols-4">
               {[
-               ["119,177", "ATM transactions made during a system outage, all posted to customer accounts in 26 minutes"],
-  ["4.5× faster", "loading of saved transactions into the bank's core system (3 min → 40 sec)"],
-  ["30+", "banking services made more reliable by fixing a shared bottleneck"],
-  ["~20", "mobile banking features built for a Tier-1 Commercial Bank in East Africa"],
+                [
+                  "119,177",
+                  "ATM transactions made during a system outage, all posted to customer accounts in 26 minutes",
+                ],
+                [
+                  "4.5× faster",
+                  "loading of saved transactions into the bank's core system (3 min → 40 sec)",
+                ],
+                [
+                  "30+",
+                  "banking services made more reliable by fixing a shared bottleneck",
+                ],
+                [
+                  "~20",
+                  "mobile banking features built for a Tier-1 Commercial Bank in East Africa",
+                ],
               ].map(([value, label]) => (
                 <div key={value}>
                   <dt className="font-mono text-lg font-semibold text-accent sm:text-xl">
@@ -567,7 +578,6 @@ export default function App() {
                 </article>
               ))}
             </div>
-           
           </div>
         </section>
 
